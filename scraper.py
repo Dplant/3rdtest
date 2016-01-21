@@ -6,11 +6,11 @@ import lxml.html
 
 # # Read in a page
 html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
-#print html
+# print html
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 root.cssselect("td")
-record = {"cell":td.text}
+record = {"cell" : td.text}
 print record
 scraperwiki.sqlite.save(['cell'], record)
 #
